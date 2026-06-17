@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GezajiTutor" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">#0A0A0A</item>
+        <item name="android:statusBarColor">#0A0A0A</item>
+        <item name="android:navigationBarColor">#0A0A0A</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:ignore="NewApi">shortEdges</item>
+        <item name="colorPrimary">#58A6FF</item>
+        <item name="colorPrimaryDark">#0A0A0A</item>
+        <item name="colorAccent">#58A6FF</item>
+    </style>
+</resources>
