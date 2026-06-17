@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Set up JDK
@@ -18,6 +18,9 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+
+      - name: Make gradlew executable
+        run: chmod +x GezajiTypingTutor/gradlew
 
       - name: Build APK
         run: cd GezajiTypingTutor && ./gradlew assembleDebug
