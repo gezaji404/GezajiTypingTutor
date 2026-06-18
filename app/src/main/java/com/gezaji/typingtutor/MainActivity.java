@@ -184,6 +184,45 @@ public class MainActivity extends AppCompatActivity implements InputManager.Inpu
         }
         sv.addView(lessonList);
         layoutMenu.addView(sv);
+// ── Info sections ──────────────────────────────────────────────────
+        TextView divider = makeTv("─────────────────────────────────", 10, 0xFF333333, Typeface.NORMAL);
+        divider.setPadding(dp(16), dp(8), dp(16), dp(8));
+        layoutMenu.addView(divider);
+
+        String[][] sections = {
+            {"📖  HELP",
+             "GETTING STARTED\n1. Connect a USB keyboard via OTG adapter.\n2. Select a lesson from the menu.\n3. Type the text shown. Keystrokes are highlighted in real time.\n4. Complete the lesson to see your results.\n\nLESSONS\n20 progressive lessons from home row basics to speed challenges.\n\nWPM & ACCURACY\n• WPM — characters typed divided by 5, per minute\n• Accuracy — correct keystrokes as a percentage of total\n• Progress — how far along the current lesson you are\n\nLED INDICATORS\nShows state of Caps Lock, Num Lock and Scroll Lock.\n\nNAVIGATION\n• Use Arrow Keys to move and Enter to select a lesson.\n• Press F5 or X Menu to return to the menu at any time."},
+            {"ℹ️  VERSION INFO",
+             "GEZAJI Typing Tutor v1.0\n\n20 lessons • Full 104-key visual keyboard • OTG support\nWPM & accuracy tracking • LED indicators • Fully offline\n\nA significant portion of this app was written with the assistance of Claude AI."},
+            {"🔒  PRIVACY POLICY",
+             "No data collected. No ads. No trackers. No analytics.\nNo internet required or requested.\nNo background or network permissions.\nEverything runs locally. Nothing leaves your device."},
+            {"📄  USER AGREEMENT & LICENSE",
+             "GEZAJI Typing Tutor is free and open source software.\nUse, modify, and redistribute freely for any purpose.\n\nBuilt out of frustration — no simple truly offline OTG typing tutor existed for Android. Available options hid features behind paywalls, faked offline support, or bundled ads and trackers.\n\nBugs? Fix it or report it:\ngithub.com/gezaji404/GezajiTypingTutor\n\n© GEZAJI_LABS 2026"},
+        };
+
+        for (String[] sec : sections) {
+            final String title = sec[0];
+            final String body  = sec[1];
+            TextView header = makeTv(title, 14, C_ACCENT, Typeface.BOLD);
+            header.setBackgroundColor(C_PANEL);
+            header.setPadding(dp(16), dp(10), dp(16), dp(10));
+            LinearLayout.LayoutParams hlp = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            hlp.setMargins(0, dp(4), 0, 0);
+            header.setLayoutParams(hlp);
+            header.setFocusable(false);
+            TextView content = makeTv(body, 13, 0xFFAAAAAA, Typeface.NORMAL);
+            content.setBackgroundColor(0xFF0D0D0D);
+            content.setPadding(dp(20), dp(10), dp(20), dp(12));
+            content.setVisibility(View.GONE);
+            LinearLayout.LayoutParams clp = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            content.setLayoutParams(clp);
+            header.setOnClickListener(v -> content.setVisibility(
+                    content.getVisibility() == View.GONE ? View.VISIBLE : View.GONE));
+            layoutMenu.addView(header);
+            layoutMenu.addView(content);
+        }
         root.addView(layoutMenu, matchParent());
 
         // ── Lesson screen ───────────────────────────────────────────────────
