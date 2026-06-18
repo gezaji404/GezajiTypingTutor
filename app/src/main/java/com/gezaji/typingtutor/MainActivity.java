@@ -518,6 +518,7 @@ public class MainActivity extends AppCompatActivity implements InputManager.Inpu
         currentScreen = s;
         layoutNoKeyboard.setVisibility(s == Screen.NO_KEYBOARD ? View.VISIBLE : View.GONE);
         layoutMenu.setVisibility(s == Screen.MENU ? View.VISIBLE : View.GONE);
+        layoutLesson.setVisibility(s == Screen.LESSON ? View.VISIBLE : View.GONE);
         // lesson is wrapped in a FrameLayout stored as tag
         View lessonFrame = (View) layoutLesson.getTag();
         if (lessonFrame != null) lessonFrame.setVisibility(s == Screen.LESSON ? View.VISIBLE : View.GONE);
