@@ -251,6 +251,8 @@ public class MainActivity extends AppCompatActivity implements InputManager.Inpu
         btnBack.setPadding(dp(10), dp(6), dp(10), dp(6));
         btnBack.setBackgroundColor(0xFF1A1A1A);
         btnBack.setOnClickListener(v -> showMenu());
+        btnBack.setFocusable(false);
+        btnBack.setFocusableInTouchMode(false);
         FrameLayout.LayoutParams backLP = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         backLP.gravity = android.view.Gravity.TOP | android.view.Gravity.END;
@@ -398,7 +400,7 @@ public class MainActivity extends AppCompatActivity implements InputManager.Inpu
         }
 
         // Navigate away
-        if (keyCode == KeyEvent.KEYCODE_ESCAPE) {
+        if (keyCode == KeyEvent.KEYCODE_ESCAPE || keyCode == KeyEvent.KEYCODE_F5) {
             if (currentScreen == Screen.LESSON || currentScreen == Screen.RESULTS) showMenu();
             return true;
         }
