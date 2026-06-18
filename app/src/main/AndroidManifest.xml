@@ -4,8 +4,6 @@
     <application
         android:allowBackup="true"
         android:label="GEZAJI Typing Tutor"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.GezajiTutor">
 
