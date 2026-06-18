@@ -654,7 +654,7 @@ public class MainActivity extends AppCompatActivity implements InputManager.Inpu
         // Each key: { keyCode, widthType, "label", "shiftLabel" }
         // widthType < 0 means spacer of abs(widthType)*0.5u
 
-        private static class Key {
+        private class Key {
             int code; float widthU; String label, sub;
             float x, y, w, h;
             Key(int code, float w, String label, String sub) {
@@ -736,7 +736,7 @@ public class MainActivity extends AppCompatActivity implements InputManager.Inpu
                     k(KeyEvent.KEYCODE_BACKSLASH,  1.5f,"\\",     "|"),
                     gap(0.25f),
                     k(KeyEvent.KEYCODE_FORWARD_DEL,1f,  "Del",    ""),
-                    k(KeyEvent.KEYCODE_END,        1f,  "End",    ""),
+                    k(KeyEvent.KEYCODE_MOVE_END,        1f,  "End",    ""),
                     k(KeyEvent.KEYCODE_PAGE_DOWN,  1f,  "PgDn",   ""),
                     gap(0.25f),
                     k(KeyEvent.KEYCODE_NUMPAD_7,   1f,  "7",      "Home"),
