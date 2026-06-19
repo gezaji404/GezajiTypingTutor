@@ -818,7 +818,7 @@ public class MainActivity extends AppCompatActivity implements InputManager.Inpu
             paint.setStyle(Paint.Style.FILL);
             canvas.drawRoundRect(rect, r, r, paint);
             paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(dp(1.5f));
+            paint.setStrokeWidth(dp(2));
             paint.setColor(active ? (Boolean.TRUE.equals(pressedErr.get(key.code))
                     ? C_KEY_ERROR : C_KEY_CORRECT) : C_KEY_BORDER);
             canvas.drawRoundRect(rect, r, r, paint);
